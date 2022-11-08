@@ -23,6 +23,11 @@ EAddition >> evaluate [
 	^left evaluate + right evaluate.
 ]
 
+{ #category : #accessing }
+EAddition >> evaluateWith: anObject [
+	^ (right evaluateWith: anObject) + (left evaluateWith: anObject).
+]
+
 { #category : #'as yet unclassified' }
 EAddition >> operatorString [
 	^'+'.

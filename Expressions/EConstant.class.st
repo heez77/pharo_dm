@@ -29,6 +29,11 @@ EConstant >> evaluate [
 	^value.
 ]
 
+{ #category : #accessing }
+EConstant >> evaluateWith: aDictionary [
+	^value.
+]
+
 { #category : #printing }
 EConstant >> printOn: aStream [
 	aStream nextPutAll: value printString.

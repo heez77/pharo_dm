@@ -1,6 +1,6 @@
 Class {
 	#name : #EVariable,
-	#superclass : #Object,
+	#superclass : #EExpression,
 	#instVars : [
 		'id'
 	],

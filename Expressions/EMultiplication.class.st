@@ -23,6 +23,11 @@ EMultiplication >> evaluate [
 	^left evaluate * right evaluate.
 ]
 
+{ #category : #accessing }
+EMultiplication >> evaluateWith: anObject [
+	^ (right evaluateWith: anObject) * (left evaluateWith: anObject).
+]
+
 { #category : #'as yet unclassified' }
 EMultiplication >> operatorString [
 	^'*'
