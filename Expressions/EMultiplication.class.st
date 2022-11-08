@@ -1,10 +1,6 @@
 Class {
 	#name : #EMultiplication,
-	#superclass : #EExpression,
-	#instVars : [
-		'left',
-		'right'
-	],
+	#superclass : #EBinaryExpression,
 	#category : #Expressions
 }
 
@@ -27,12 +23,16 @@ EMultiplication >> evaluate [
 	^left evaluate * right evaluate.
 ]
 
-{ #category : #accessing }
-EMultiplication >> left: anExpression [
-	left:= anExpression.
+{ #category : #'as yet unclassified' }
+EMultiplication >> operatorString [
+	^'*'
 ]
 
-{ #category : #accessing }
-EMultiplication >> right: anExpression [
-	right:= anExpression.
+{ #category : #printing }
+EMultiplication >> printOn: aStream [
+	aStream nextPutAll: '( '.
+	left printOn: aStream.
+	aStream nextPutAll: ' * '.
+	right printOn: aStream.
+	aStream nextPutAll: ' )'.
 ]
