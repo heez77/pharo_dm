@@ -5,6 +5,11 @@ Class {
 }
 
 { #category : #arithmetic }
+EExpression >> accept: aVisitor [
+	self subclassResponsibility.
+]
+
+{ #category : #arithmetic }
 EExpression >> negated [
 	^ENegation new expression: self.
 ]

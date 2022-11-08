@@ -24,14 +24,19 @@ EConstant class >> value: anInteger [
 	^self new value: anInteger.
 ]
 
-{ #category : #accessing }
+{ #category : #visiting }
+EConstant >> accept: aVisitor [
+	^ aVisitor visitConstant: self.
+]
+
+{ #category : #'public access' }
 EConstant >> evaluate [
 	^value.
 ]
 
 { #category : #accessing }
-EConstant >> evaluateWith: aDictionary [
-	^value.
+EConstant >> evaluateWith: anObject [
+	^ self accept: EEvaluatorVisitor new.
 ]
 
 { #category : #printing }
