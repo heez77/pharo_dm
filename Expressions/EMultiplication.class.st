@@ -19,6 +19,11 @@ EMultiplication class >> left: anEExpression right: anEExpression2 [
 ]
 
 { #category : #accessing }
+EMultiplication >> accept: aVisitor [
+	^ aVisitor visitMultiplication: self.
+]
+
+{ #category : #accessing }
 EMultiplication >> evaluate [
 	^left evaluate * right evaluate.
 ]

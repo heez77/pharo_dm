@@ -9,6 +9,14 @@ EExpression >> accept: aVisitor [
 	self subclassResponsibility.
 ]
 
+{ #category : #accessing }
+EExpression >> evaluateWith: anEnvironment [
+	| visitor |
+	visitor := EEvaluatorVisitor new.
+	visitor bindings: anEnvironment.
+	^ self accept: visitor.
+]
+
 { #category : #arithmetic }
 EExpression >> negated [
 	^ENegation new expression: self.

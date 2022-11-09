@@ -18,6 +18,11 @@ EAddition class >> left: anEExpression right: anEExpression2 [
 	^ self new left: anEExpression; right: anEExpression2
 ]
 
+{ #category : #'as yet unclassified' }
+EAddition >> accept: aVisitor [
+	^ aVisitor visitAddition: self.
+]
+
 { #category : #accessing }
 EAddition >> evaluate [
 	^left evaluate + right evaluate.
@@ -25,7 +30,7 @@ EAddition >> evaluate [
 
 { #category : #accessing }
 EAddition >> evaluateWith: anObject [
-	^ (right evaluateWith: anObject) + (left evaluateWith: anObject).
+	^ self accept: EEvaluatorVisitor new.
 ]
 
 { #category : #'as yet unclassified' }

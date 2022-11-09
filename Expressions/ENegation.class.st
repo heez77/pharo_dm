@@ -12,6 +12,11 @@ ENegation class >> expression: anExpression [
 	^self new expression: anExpression.
 ]
 
+{ #category : #visiting }
+ENegation >> accept: aVisitor [
+	^ aVisitor visitNegation: self.
+]
+
 { #category : #accessing }
 ENegation >> evaluate [
 	^expression evaluate * -1.
@@ -19,7 +24,12 @@ ENegation >> evaluate [
 
 { #category : #accessing }
 ENegation >> evaluateWith: anObject [
-	^ (expression evaluateWith: anObject) negated
+	^ self accept: EEvaluatorVisitor new
+]
+
+{ #category : #accessing }
+ENegation >> expression [
+	^ expression.
 ]
 
 { #category : #accessing }

@@ -45,6 +45,11 @@ EConstant >> printOn: aStream [
 ]
 
 { #category : #accessing }
+EConstant >> value [
+	^value
+]
+
+{ #category : #accessing }
 EConstant >> value: anInteger [
 	value:= anInteger.
 ]
