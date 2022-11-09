@@ -30,7 +30,7 @@ EAddition >> evaluate [
 
 { #category : #accessing }
 EAddition >> evaluateWith: anObject [
-	^ self accept: EEvaluatorVisitor new.
+	^ self accept: (EEvaluatorVisitor new bindings: anObject).
 ]
 
 { #category : #'as yet unclassified' }

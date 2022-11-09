@@ -24,7 +24,7 @@ ENegation >> evaluate [
 
 { #category : #accessing }
 ENegation >> evaluateWith: anObject [
-	^ self accept: EEvaluatorVisitor new
+	^ self accept: (EEvaluatorVisitor new bindings: anObject).
 ]
 
 { #category : #accessing }
